@@ -1,0 +1,28 @@
+<form name="loginform" onSubmit="return validateForm();" action="zadanka.html" method="post">
+    <label>Login</label>
+    <input type="text" name="usr" placeholder="Login"> 
+    <label>Hasło</label>
+    <input type="password" name="pword" placeholder="">
+    <input type="submit" value="Login"/>
+</form>
+
+<script>
+    logins = new Map([
+            ['root', 'root'],
+            ['admin', 'admin']
+]);
+    function validateForm() {
+        var un = document.loginform.usr.value;
+        var pw = document.loginform.pword.value;
+        var username = "admin"; 
+        var password = "admin";
+        if ((un == username) && (pw == password)) {
+            return true;
+            window.location.href = 'zadanka.html';
+        }
+        else {
+            alert ("Logowanie nie powiodło się, sprawdź swoją nazwę użytkownika i hasło");
+            return false;
+        }
+  }
+</script>
